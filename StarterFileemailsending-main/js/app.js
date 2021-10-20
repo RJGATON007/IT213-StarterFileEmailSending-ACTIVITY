@@ -31,5 +31,19 @@ function appInit() {
 
 // Validate the fields
 function validateField() {
-    console.log('From validateFiled');
+    let errors;
+
+    // Validate the length of the field
+    validateLength(this)
+}
+//Validate the length of the fields
+
+function validateLength(field) {
+    if(field.value.length > 0) {
+        field.style.borderBottomColor = 'green';
+        field.classList.remove('error');
+    } else {
+        field.style.borderBottomColor = 'red';
+        field.classList.add('error');
+    }
 }
