@@ -22,7 +22,7 @@ function eventListeners() {
     message.addEventListener('blur', validateField);
 
     // send email & reset button
-
+    sendEmailForm.addEventListener('submit', sendEmail);
     resetBtn.addEventListener('click', resetForm);
 }
 
@@ -33,6 +33,20 @@ function eventListeners() {
 function appInit() {
     //Disable the send button on load
     sendBtn.disabled = true;
+}
+function sendEmail() {
+    e.preventDefault();
+
+    // show the spinner
+
+    const spinner = document.querySelector('#spinner');
+    spinner.style.display = 'block';
+
+    // hide spinner then show the send email image
+    setTimeout(function () {
+        // hide the spinner
+        spinner.style.displa = 'none';
+    }, 3000);
 }
 
 // Validate the fields
